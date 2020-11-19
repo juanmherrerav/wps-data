@@ -4,7 +4,6 @@ build:
     release:
      dockerfile: Dockerfile
      target: builder
-     command: /bin/bash
      image: wps-data
 run:
   web: docker run  -it -p 27017:27017 /bin/bash
