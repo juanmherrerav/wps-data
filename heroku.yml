@@ -1,3 +1,5 @@
 build:
   docker:
     web: Dockerfile
+run:
+  web: mongo 127.0.0.1:28000
