@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  mongodb:
+    image: mongo:3.6.8
+    command: mongod --smallfiles
+    ports:
+      - 27017
+
+  mongo_seed:
+    image: ${{mongo_seed}}
+    links:
+      - mongodb
+
+  client:
+    image: ${{build_prj}}
+    links:
+      - mongodb
+    ports:
+      - 9000
+    environment:
+      - MONGO_URI=mongodb://productListUser:productListPassword@localhost:27017/admin
