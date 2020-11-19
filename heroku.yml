@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: mongod
+  web: mongod "mongodb://localhost:27017/admin"
