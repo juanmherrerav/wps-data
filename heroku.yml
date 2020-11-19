@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: docker run -e MONGO_INITDB_ROOT_USERNAME=productListUser -e MONGO_INITDB_ROOT_PASSWORD=productListPassword --name mongodb-local -p 27017:27017
+  web: docker run  -it --name mongodb-local -p 27017:27017
