@@ -7,12 +7,7 @@ ENV MONGO_INITDB_ROOT_PASSWORD=productListPassword
 
 COPY ./database/products.json  /database/products.json
 
-COPY  /entrypoint/products-entrypoint.sh /docker-entrypoint-initdb.d/init.sh
+COPY  /entrypoint/products-entrypoint2.sh /docker-entrypoint-initdb.d/init.sh
 
-ENTRYPOINT ["/entrypoint/products-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint-initdb.d/init.sh"]
 
-
-#FROM mongo:3.6.8
-
-#COPY database/products.json /products.json
-#CMD mongoimport --host mongodb --username productListUser --password productListPassword --authenticationDatabase admin  --db promotions --collection products --type json --file /products.json --jsonArray --mode upsert
